@@ -11,26 +11,34 @@ Cloud Logging receives log entries with the Cloud Logging API where they pass th
 Sinks control how Cloud Logging routes logs. Using sinks, you can route some or all of your logs to supported destinations(Big Query).
 
 ## More on Filters
+
 When creating a log sink in Google Cloud Platform (GCP), you have the option to specify both inclusion and exclusion filters to precisely control which logs are routed to the sink's destination. Here's a bit more detail on how these filters work:
 
 #### Inclusion Filters:
 
 Inclusion filters are used to select specific logs that match certain criteria to be routed to the sink's destination.
+
 You can configure inclusion filters based on various parameters such as log severity, resource labels, log entry fields, or custom metadata.
+
 For example, you can create an inclusion filter to only export logs of a certain severity level (e.g., ERROR or CRITICAL), logs from specific resources (e.g., GKE Cluster), or logs containing specific keywords in the log message.
 
 
 #### Exclusion Filters:
 
 Exclusion filters, on the other hand, are used to exclude logs that match certain criteria from being routed to the sink's destination.
+
 Exclusion filters are particularly useful for filtering out noisy or irrelevant logs, reducing unnecessary storage and processing costs.
+
 Similar to inclusion filters, you can configure exclusion filters based on log severity, resource labels, log entry fields, or custom metadata.
+
 For example, you can create an exclusion filter to exclude logs of a certain severity level (e.g., DEBUG or INFO), logs from specific resources that are known to be noisy, or logs containing sensitive information that shouldn't be exported.
 
 ## Usage Tips:
 
-***Precise Filtering:***  Use a combination of inclusion and exclusion filters to precisely control which logs are exported to the sink's destination. This allows you to tailor the log export behavior to your specific requirements.
-Regular Expression Support: Both inclusion and exclusion filters support regular expressions, providing flexibility in defining complex filtering criteria.
+***Precise Filtering:***  
+Use a combination of inclusion and exclusion filters to precisely control which logs are exported to the sink's destination. This allows you to tailor the log export behavior to your specific requirements.
+
+***Regular Expression Support:***  Both inclusion and exclusion filters support regular expressions, providing flexibility in defining complex filtering criteria.
 
 ***Testing and Validation:***  Test your filters thoroughly to ensure that they select or exclude the desired logs accurately. You can use the Log Router's preview feature to validate filter configurations before applying them.
 
